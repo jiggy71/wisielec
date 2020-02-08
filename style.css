@@ -16,12 +16,14 @@ body {
 	margin-bottom: 50px;
 	text-align: center;
 	font-size: 48px;
+	min-height: 60px;
 }
 
 #picture	{
 	float: left;
 	width: 50%;
 	text-align: center;
+	min-height: 280px;
 }
 
 #keyboard	{
