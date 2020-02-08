@@ -1,0 +1,32 @@
+body {
+	background-color: #000000;
+	color: lightgray;
+	font-size: 28px;
+}
+
+#container	{
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#board	{
+	width: 100%;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 48px;
+}
+
+#picture	{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
+#keyboard	{
+	float: left;
+	width: 50%;
+	text-align: center;
+}
+
