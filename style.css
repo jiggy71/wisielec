@@ -5,7 +5,7 @@ body {
 }
 
 #container	{
-	width: 900px;
+	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -23,18 +23,18 @@ body {
 
 #picture	{
 	float: left;
-	width: 50%;
+	width: 45%;
 	text-align: center;
 	min-height: 280px;
 }
 
 #keyboard	{
-	float: left;
-	width: 50%;
+	float: right;
+	width: 45%;
 	text-align: center;
 }
 
-.button	{
+.button {
 	width: 30px;
 	height: 30px;
 	text-align: center;
@@ -52,6 +52,45 @@ body {
 	border-color: white;
 }
 
+.green	{
+	background-color: #003311;
+	color: #00b33c;
+	border-color: #00b33c;
+	cursor: default;
+}
+
+.green:hover	{
+	background-color: #003311;
+	color: #00b33c;
+	border-color: #00b33c;
+}
+
+.red	{
+	background-color: #330000;
+	color: #e60000;
+	border-color: #e60000;
+	cursor: default;
+}
+
+.red:hover	{
+	background-color: #330000;
+	color: #e60000;
+	border-color: #e60000;
+}
+
+.but1 {
+	height: 30px;
+	text-align: center;
+	padding: 5px;
+	border: 3px solid gray;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+.but1:hover	{
+	background-color: #222222;
+	color: white;
+	border-color: white;
 
 	
 

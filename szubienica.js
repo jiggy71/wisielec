@@ -1,7 +1,11 @@
-var to_guess = "Bez pracy nie ma kołaczy";
+var to_guess = "Ala ma kota";
 to_guess = to_guess.toUpperCase();
 var guessed = Mask(to_guess);
 const LETTERS = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPQRSŚTUVWXYZŻŹ";
+var gallows_lewel = 0;
+
+var audioYes = new Audio('yes.wav');
+var audioNo = new Audio('no.wav');
 
 function Mask(text)	{
 	var result = "";
@@ -33,13 +37,44 @@ function CreateKeyboard()	{
 }
 
 function Check(number)	{
+	var isCorrect = false;
 	for (i=0; i<to_guess.length; i++)	{
 		if (to_guess.charAt(i) == LETTERS.charAt(number))	{
 			guessed = guessed.substring(0, i) + LETTERS.charAt(number) + guessed.substring(i+1);
+			isCorrect = true;
 		} 
 	}
 	PrintTo_Guess(guessed);
+	
+	var actual_div = "btn" + number;
+	document.getElementById(actual_div).setAttribute("onclick", ";");
+	
+	if (isCorrect) {
+		audioYes.play();
+		document.getElementById(actual_div).className = "button green";
+	} else {
+		audioNo.play();
+		document.getElementById(actual_div).className = "button red";
+		SetGallowsLevel(++gallows_lewel);
+	}
+	
+	if (guessed == to_guess) YouWin();
 }
+
+function SetGallowsLevel(level)	{
+	document.getElementById('picture').innerHTML = '<img src="img/s' + level + '.jpg" />';
+	if (level >= 9) YouLoose();
+}
+
+function YouWin()	{
+	document.getElementById('keyboard').innerHTML = '<h2>Brawo!</h2><h3>Udało Ci się odgadnąć!</h3><p class="but1" onclick="location.reload();">Gram jeszcze raz</p>';
+}
+
+function YouLoose()	{
+	document.getElementById('keyboard').innerHTML = '<h2>No niestety...</h2><h3>Nie udało Ci się odgadnąć.</h3><p class="but1" onclick="location.reload();">Gram jeszcze raz</p>';
+	PrintTo_Guess(to_guess);
+}
+
 
 function Start()	{
 	CreateKeyboard();
